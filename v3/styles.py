@@ -1,6 +1,6 @@
 APP_STYLE = """
-QMainWindow { background-color: #F5F5F5; }
-QWidget { background-color: #F5F5F5; }
+QMainWindow { background-color: #F8EFE5; }
+QWidget { background-color: #F8EFE5; }
 QLabel { color: #222222; }
 QLabel#goodStatus { color: #2E7D32; font-weight: bold; }
 QLabel#simulationStatus { color: #1565C0; font-weight: bold; }

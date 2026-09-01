@@ -79,3 +79,56 @@ class StatusPage(QWidget):
         self.back_button.setFont(back_font)
         self.back_button.clicked.connect(self.main_window.show_home_page)
         main_layout.addWidget(self.back_button)
+
+    def set_estop_status(self, active):
+        if active:
+            self.estop_value.setText(
+                "ACTIVE"
+            )
+            self.estop_value.setObjectName(
+                "dangerStatus"
+            )
+
+            self.safety_value.setText(
+                "STOPPED"
+            )
+            self.safety_value.setObjectName(
+                "dangerStatus"
+            )
+
+            self.cobot_value.setText(
+                "STOPPED"
+            )
+            self.cobot_value.setObjectName(
+                "dangerStatus"
+            )
+
+        else:
+            self.estop_value.setText(
+                "RELEASED"
+            )
+            self.estop_value.setObjectName(
+                "goodStatus"
+            )
+
+            self.safety_value.setText(
+                "OK"
+            )
+            self.safety_value.setObjectName(
+                "goodStatus"
+            )
+
+            self.cobot_value.setText(
+                "READY"
+            )
+            self.cobot_value.setObjectName(
+                "goodStatus"
+            )
+
+        for widget in (
+            self.estop_value,
+            self.safety_value,
+            self.cobot_value,
+        ):
+            widget.style().unpolish(widget)
+            widget.style().polish(widget)
